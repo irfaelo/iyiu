@@ -1,0 +1,56 @@
+:root{
+  --primary-color: #ccc;
+  --toggle-color: var(--primary-color);
+  --toggle-color-selected:  #4d2;
+}
+
+
+/* TOGGLE CSS */
+[data-toggle] {
+    width: 40px;
+    background: #ccc;
+    height: 0px;
+    padding: 10px;
+    outline: none; 
+    display: block;
+}
+
+[data-toggle]+* {
+    margin-left: 55px;
+}
+
+[data-toggle]:checked:after {
+    background: #fff;
+    margin-left: 50%;
+}
+
+[data-toggle]:after,
+[data-toggle]:before {
+    content: "";
+    display: inline-block;
+    transition: 300ms ease-in-out;
+    }
+    
+[data-toggle]:after {
+    background: var(--toggle-color);
+    width: 50%;
+    height: 20px;
+    border-radius: 50%;
+    position: relative; 
+    box-shadow: 0 2px 4px 0px #0006;
+    transform: translate(3px,-26px);
+}
+
+[data-toggle]:before {
+    background: #fff;
+    width: 100%;
+    height: 20px;
+    border-radius: 20px;
+    padding: 2px;
+    border: var(--toggle-color) 1px solid; 
+    box-shadow: 0 3px 5px -2px #0006;
+}
+[data-toggle]:checked:before {
+  background:var(--toggle-color-selected);
+  border:1px solid inherit;
+}
